@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-oslob-sand text-zinc-900 font-sans antialiased overflow-x-hidden;
+    /* Hide the default cursor for our custom whale shark cursor */
+    cursor: none;
+  }
+  
+  /* Make sure links and buttons also hide default cursor so ours takes over */
+  a, button, [role="button"] {
+    cursor: none !important;
+  }
+  
+  ::selection {
+    @apply bg-oslob-cyan text-white;
+  }
+}
+
+/* Custom scrollbar to match the fun theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FEF9F0; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #00C2FF; 
+  border-radius: 6px;
+  border: 3px solid #FEF9F0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0A2463; 
+}
