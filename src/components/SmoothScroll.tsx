@@ -1,13 +1,12 @@
-import { ReactLenis } from '@studio-freight/react-lenis';
-
 interface SmoothScrollProps {
   children: any;
 }
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
+  // Disabled ReactLenis for maximum native performance
   return (
-    <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
+    <>
       {children}
-    </ReactLenis>
+    </>
   );
 }

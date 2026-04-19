@@ -1,17 +1,12 @@
 import { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 
 export default function Cursor() {
   const [isHovering, setIsHovering] = useState(false);
 
-  // Mouse positions
+  // Mouse positions - raw motion values for zero latency
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
-
-  // Spring settings for buttery smooth delay (inertia effect)
-  const springConfig = { damping: 25, stiffness: 200, mass: 0.5 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
@@ -21,7 +16,6 @@ export default function Cursor() {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      // Check if the target is clickable or requires interaction
       const isClickable =
         target.tagName.toLowerCase() === 'a' ||
         target.tagName.toLowerCase() === 'button' ||
@@ -44,8 +38,8 @@ export default function Cursor() {
     <motion.div
       className="fixed top-0 left-0 z-[9999] pointer-events-none"
       style={{
-        x: cursorXSpring,
-        y: cursorYSpring,
+        x: cursorX,
+        y: cursorY,
         translateX: '-50%',
         translateY: '-50%',
       }}
@@ -55,17 +49,15 @@ export default function Cursor() {
           scale: isHovering ? 1.5 : 1,
           rotate: isHovering ? 15 : 0,
         }}
-        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+        transition={{ type: 'spring', stiffness: 500, damping: 30 }}
         className="relative flex items-center justify-center w-12 h-12"
       >
-        {/* Original Whale Shark Cursor Image */}
         <img
           src="/whale.png"
           alt="Whale Shark Cursor"
           className="w-full h-full object-contain pointer-events-none"
           style={{ 
-            mixBlendMode: 'multiply', 
-            filter: 'brightness(1.1) contrast(1.1)' 
+            willChange: 'transform'
           }}
         />
       </motion.div>
