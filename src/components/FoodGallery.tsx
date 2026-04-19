@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 
 const DELICACIES = [
   {
-    name: 'Sutukil',
-    desc: 'The best of fresh seafood! SUgba (grilled), TUwa (stewed/soup), and KILaw (raw fish in coconut vinegar). It’s the ultimate coastal dining experience.',
-    img: '/sutukil.jpg',
+    name: 'Rosquillos',
+    desc: 'A classic Cebuano biscuit—light, crisp, and slightly sweet with a buttery flavor. Perfect for pairing with coffee or hot chocolate, making it a simple yet satisfying treat any time of day.',
+    img: '/rosquillos.jpg',
     color: 'bg-oslob-cyan',
   },
   {
