@@ -10,6 +10,10 @@ export default function Hero() {
           from { transform: translate3d(-30vw, 0, 0); }
           to { transform: translate3d(130vw, 0, 0); }
         }
+        @keyframes swim-reverse {
+          from { transform: translate3d(130vw, 0, 0); }
+          to { transform: translate3d(-30vw, 0, 0); }
+        }
         @keyframes bubbleUp {
           0% { transform: translate3d(0, 110vh, 0); opacity: 0; }
           20% { opacity: 0.4; }
@@ -23,8 +27,20 @@ export default function Hero() {
           opacity: 0.35;
           display: flex;
           gap: 1.5rem;
-          animation: swim linear infinite;
           will-change: transform;
+        }
+        .swim-right {
+          animation: swim linear infinite;
+        }
+        .swim-right span {
+          display: inline-block;
+          transform: scaleX(-1);
+        }
+        .swim-left {
+          animation: swim-reverse linear infinite;
+        }
+        .swim-left span {
+          display: inline-block;
         }
         .bubble {
           position: absolute;
@@ -38,29 +54,29 @@ export default function Hero() {
         }
       `}</style>
 
-      {/* Doubled Fish Schools - Total 8 schools */}
-      <div className="fish-school" style={{ top: '10%', animationDuration: '28s', animationDelay: '0s' }}>
+      {/* Bidirectional Fish Schools - 4 moving right, 4 moving left */}
+      <div className="fish-school swim-right" style={{ top: '10%', animationDuration: '28s', animationDelay: '0s' }}>
         <span className="text-xl">🐟</span> <span className="text-xl mt-4">🐠</span>
       </div>
-      <div className="fish-school hidden md:flex" style={{ top: '20%', animationDuration: '22s', animationDelay: '10s' }}>
+      <div className="fish-school swim-left hidden md:flex" style={{ top: '20%', animationDuration: '22s', animationDelay: '10s' }}>
         <span className="text-xl">🐡</span> <span className="text-xl -mt-4">🐟</span>
       </div>
-      <div className="fish-school" style={{ top: '35%', animationDuration: '35s', animationDelay: '5s' }}>
+      <div className="fish-school swim-right" style={{ top: '35%', animationDuration: '35s', animationDelay: '5s' }}>
         <span className="text-xl">🐠</span> <span className="text-xl mt-2">🐟</span>
       </div>
-      <div className="fish-school hidden lg:flex" style={{ top: '45%', animationDuration: '25s', animationDelay: '15s' }}>
+      <div className="fish-school swim-left hidden lg:flex" style={{ top: '45%', animationDuration: '25s', animationDelay: '15s' }}>
         <span className="text-xl">🐟</span> <span className="text-xl mt-3">🐠</span>
       </div>
-      <div className="fish-school" style={{ top: '55%', animationDuration: '30s', animationDelay: '3s' }}>
+      <div className="fish-school swim-right" style={{ top: '55%', animationDuration: '30s', animationDelay: '3s' }}>
         <span className="text-xl">🐡</span> <span className="text-xl mt-1">🐟</span>
       </div>
-      <div className="fish-school hidden md:flex" style={{ top: '65%', animationDuration: '20s', animationDelay: '12s' }}>
+      <div className="fish-school swim-left hidden md:flex" style={{ top: '65%', animationDuration: '20s', animationDelay: '12s' }}>
         <span className="text-xl">🐠</span> <span className="text-xl -mt-2">🐟</span>
       </div>
-      <div className="fish-school" style={{ top: '75%', animationDuration: '40s', animationDelay: '7s' }}>
+      <div className="fish-school swim-right" style={{ top: '75%', animationDuration: '40s', animationDelay: '7s' }}>
         <span className="text-xl">🐟</span> <span className="text-xl mt-4">🐡</span>
       </div>
-      <div className="fish-school hidden lg:flex" style={{ top: '90%', animationDuration: '18s', animationDelay: '1s' }}>
+      <div className="fish-school swim-left hidden lg:flex" style={{ top: '90%', animationDuration: '18s', animationDelay: '1s' }}>
         <span className="text-xl">🐠</span> <span className="text-xl">🐟</span>
       </div>
 
