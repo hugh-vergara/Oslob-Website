@@ -24,7 +24,7 @@ const GUIDES = [
 
 export default function TravelGuide() {
   return (
-    <section id="plan" className="py-24 bg-white rounded-t-[4rem] md:rounded-t-[8rem] shadow-fun relative z-20">
+    <section id="plan" data-header-theme="dark" className="py-24 bg-white rounded-t-[4rem] md:rounded-t-[8rem] shadow-fun relative z-20">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <motion.div

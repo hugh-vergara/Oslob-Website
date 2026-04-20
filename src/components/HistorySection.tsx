@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function HistorySection() {
   return (
-    <section id="history" className="relative w-full py-24 bg-oslob-sand flex flex-col items-center">
+    <section id="history" data-header-theme="dark" className="relative w-full py-24 bg-oslob-sand flex flex-col items-center">
       <div className="container mx-auto px-6 md:px-12 max-w-5xl text-center">
         
         <motion.div

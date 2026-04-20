@@ -29,7 +29,7 @@ const DELICACIES = [
 
 export default function FoodGallery() {
   return (
-    <section id="culture" className="relative w-full py-24 bg-oslob-sand">
+    <section id="culture" data-header-theme="dark" className="relative w-full py-24 bg-oslob-sand">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <motion.h2 

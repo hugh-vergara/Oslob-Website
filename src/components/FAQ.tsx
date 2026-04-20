@@ -25,7 +25,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-oslob-sand border-t-8 border-oslob-blue/5">
+    <section id="faq" data-header-theme="dark" className="py-24 bg-oslob-sand border-t-8 border-oslob-blue/5">
       <div className="container mx-auto px-6 md:px-12 max-w-4xl">
         <div className="text-center mb-16">
           <HelpCircle className="w-16 h-16 text-oslob-cyan mx-auto mb-6 animate-bounce" />

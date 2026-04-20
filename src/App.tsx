@@ -55,7 +55,7 @@ function App() {
 
           <HistorySection />
 
-          <div id="attractions" className="relative z-10 bg-white py-24 rounded-[4rem] md:rounded-[8rem] shadow-fun">
+          <div id="attractions" data-header-theme="dark" className="relative z-10 bg-white py-24 rounded-[4rem] md:rounded-[8rem] shadow-fun">
             <div className="text-center py-12">
               <h2 className="text-3xl md:text-5xl font-display font-black text-oslob-blue tracking-tight">
                 Explore The Magic
